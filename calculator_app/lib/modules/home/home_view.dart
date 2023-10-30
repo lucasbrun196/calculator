@@ -1,7 +1,10 @@
+import 'package:calculator_app/modules/home/controller/home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+  HomeController controller;
+  HomeView({super.key, required this.controller});
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -11,258 +14,434 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: const Color.fromARGB(255, 36, 68, 143),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 70, left: 5, right: 5),
-              child: Container(
-                height: 120,
-                decoration:
-                    const BoxDecoration(color: Color.fromARGB(136, 0, 0, 0)),
-              ),
-            ),
-            Container(
-              color: const Color.fromARGB(255, 0, 0, 0),
-              height: 520,
-              child: Center(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('7'),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('8'),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('9'),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('X'),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('4'),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('5'),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('6'),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('-'),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('1'),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('2'),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('3'),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('+'),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('C'),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('0'),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('%'),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 5, left: 5, top: 15),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(100)),
-                                fixedSize: const Size(80, 80),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 21, 139, 113)),
-                            onPressed: () {},
-                            child: const Text('='),
-                          ),
-                        ),
-                      ],
-                    )
+      appBar: AppBar(
+        elevation: 0,
+        title: const Center(
+          child: Text('Calculator'),
+        ),
+      ),
+      body: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Container(
+              height: 150,
+              width: 400,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.black,
+                    Color.fromARGB(255, 40, 35, 35),
                   ],
                 ),
               ),
+              child: BlocBuilder<HomeController, HomeState>(
+                bloc: widget.controller,
+                builder: (BuildContext context, HomeState state) {
+                  if (state.displayStatus == DisplayStatus.display) {
+                    return Column(
+                      children: [
+                        Text(state.displayNumber!),
+                      ],
+                    );
+                  } else {
+                    return Container();
+                  }
+                },
+              ),
             ),
-          ],
-        ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 4),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    decoration: const BoxDecoration(),
+                    height: 100,
+                    width: 95,
+                    child: const Center(
+                      child: Text(
+                        'C',
+                        style: TextStyle(
+                          fontSize: 40,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    widget.controller.display(',');
+                  },
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        left: BorderSide(color: Colors.white),
+                      ),
+                    ),
+                    height: 100,
+                    width: 95,
+                    child: const Center(
+                      child: Text(
+                        ',',
+                        style: TextStyle(
+                          fontSize: 40,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        left: BorderSide(color: Colors.white),
+                      ),
+                    ),
+                    height: 100,
+                    width: 95,
+                    child: const Center(
+                      child: Text(
+                        '%',
+                        style: TextStyle(fontSize: 40),
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        left: BorderSide(color: Colors.white),
+                      ),
+                    ),
+                    height: 100,
+                    width: 95,
+                    child: const Center(
+                      child: Text(
+                        '÷',
+                        style: TextStyle(
+                          fontSize: 40,
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  widget.controller.display('7');
+                },
+                child: Container(
+                  decoration: const BoxDecoration(),
+                  height: 100,
+                  width: 95,
+                  child: const Center(
+                    child: Text(
+                      '7',
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  widget.controller.display('8');
+                },
+                child: Container(
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      left: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                  height: 100,
+                  width: 95,
+                  child: const Center(
+                    child: Text(
+                      '8',
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  widget.controller.display('9');
+                },
+                child: Container(
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      left: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                  height: 100,
+                  width: 95,
+                  child: const Center(
+                    child: Text(
+                      '9',
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      left: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                  height: 100,
+                  width: 95,
+                  child: const Center(
+                    child: Text(
+                      'X',
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  widget.controller.display('4');
+                },
+                child: Container(
+                  decoration: const BoxDecoration(),
+                  height: 100,
+                  width: 95,
+                  child: const Center(
+                    child: Text(
+                      '4',
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  widget.controller.display('5');
+                },
+                child: Container(
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      left: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                  height: 100,
+                  width: 95,
+                  child: const Center(
+                    child: Text(
+                      '5',
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  widget.controller.display('6');
+                },
+                child: Container(
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      left: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                  height: 100,
+                  width: 95,
+                  child: const Center(
+                    child: Text(
+                      '6',
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      left: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                  height: 100,
+                  width: 95,
+                  child: const Center(
+                    child: Text(
+                      '-',
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  widget.controller.display('1');
+                },
+                child: Container(
+                  decoration: const BoxDecoration(),
+                  height: 100,
+                  width: 95,
+                  child: const Center(
+                    child: Text(
+                      '1',
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  widget.controller.display('2');
+                },
+                child: Container(
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      left: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                  height: 100,
+                  width: 95,
+                  child: const Center(
+                    child: Text(
+                      '2',
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  widget.controller.display('3');
+                },
+                child: Container(
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      left: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                  height: 100,
+                  width: 95,
+                  child: const Center(
+                    child: Text(
+                      '3',
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      left: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                  height: 100,
+                  width: 95,
+                  child: const Center(
+                    child: Text(
+                      '+',
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  widget.controller.display('0');
+                },
+                child: Container(
+                  decoration: const BoxDecoration(),
+                  height: 100,
+                  width: 95,
+                  child: const Center(
+                    child: Text(
+                      '0',
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  
+                },
+                child: Container(
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      left: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                  height: 100,
+                  width: 95,
+                  child: const Center(
+                    child: Text(
+                      '=',
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }

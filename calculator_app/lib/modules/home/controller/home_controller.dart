@@ -6,15 +6,20 @@ class HomeController extends Cubit<HomeState> {
   HomeController(super.initialState);
 
   void display(number) {
-
     emit(state.copyWith(displayStatus: DisplayStatus.notDisplay));
-    String show = '';
-    show = state.displayNumber! + number;
-
-
+    String typedNumber = '';
+    typedNumber = state.displayNumber! + number;
     emit(state.copyWith(
-        displayNumber: show,
-        displayStatus: DisplayStatus.display));
+        displayNumber: typedNumber, displayStatus: DisplayStatus.display));
   }
 
+  toInt() {
+    List<int> numbersList = [];
+    int numberToInt = int.parse(state.displayNumber!);
+    numbersList.add(numberToInt);
+    emit(
+      state.copyWith(displayNumber: ''),
+    );
+
+  }
 }

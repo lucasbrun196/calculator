@@ -22,33 +22,25 @@ class _HomeViewState extends State<HomeView> {
       ),
       body: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Container(
-              height: 150,
-              width: 400,
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.black,
-                    Color.fromARGB(255, 40, 35, 35),
-                  ],
-                ),
-              ),
-              child: BlocBuilder<HomeController, HomeState>(
-                bloc: widget.controller,
-                builder: (BuildContext context, HomeState state) {
-                  if (state.displayStatus == DisplayStatus.display) {
-                    return Column(
-                      children: [
-                        Text(state.displayNumber!),
-                      ],
-                    );
-                  } else {
-                    return Container();
-                  }
-                },
-              ),
+          Container(
+            height: 150,
+            width: 400,
+            decoration: const BoxDecoration(
+              color: Colors.black38
+            ),
+            child: BlocBuilder<HomeController, HomeState>(
+              bloc: widget.controller,
+              builder: (BuildContext context, HomeState state) {
+                if (state.displayStatus == DisplayStatus.display) {
+                  return Column(
+                    children: [
+                      Text(state.displayNumber!),
+                    ],
+                  );
+                } else {
+                  return Container();
+                }
+              },
             ),
           ),
           Padding(
@@ -59,7 +51,13 @@ class _HomeViewState extends State<HomeView> {
                 GestureDetector(
                   onTap: () {},
                   child: Container(
-                    decoration: const BoxDecoration(),
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: Color.fromARGB(123, 35, 31, 31),
+                        ),
+                      ),
+                    ),
                     height: 100,
                     width: 95,
                     child: const Center(
@@ -79,7 +77,12 @@ class _HomeViewState extends State<HomeView> {
                   child: Container(
                     decoration: const BoxDecoration(
                       border: Border(
-                        left: BorderSide(color: Colors.white),
+                        bottom: BorderSide(
+                          color: Color.fromARGB(123, 35, 31, 31),
+                        ),
+                        left: BorderSide(
+                          color: Color.fromARGB(123, 35, 31, 31),
+                        ),
                       ),
                     ),
                     height: 100,
@@ -99,7 +102,12 @@ class _HomeViewState extends State<HomeView> {
                   child: Container(
                     decoration: const BoxDecoration(
                       border: Border(
-                        left: BorderSide(color: Colors.white),
+                        bottom: BorderSide(
+                          color: Color.fromARGB(123, 35, 31, 31),
+                        ),
+                        left: BorderSide(
+                          color: Color.fromARGB(123, 35, 31, 31),
+                        ),
                       ),
                     ),
                     height: 100,
@@ -117,7 +125,12 @@ class _HomeViewState extends State<HomeView> {
                   child: Container(
                     decoration: const BoxDecoration(
                       border: Border(
-                        left: BorderSide(color: Colors.white),
+                        bottom: BorderSide(
+                          color: Color.fromARGB(123, 35, 31, 31),
+                        ),
+                        left: BorderSide(
+                          color: Color.fromARGB(123, 35, 31, 31),
+                        ),
                       ),
                     ),
                     height: 100,
@@ -143,7 +156,13 @@ class _HomeViewState extends State<HomeView> {
                   widget.controller.display('7');
                 },
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
+                    ),
+                  ),
                   height: 100,
                   width: 95,
                   child: const Center(
@@ -163,7 +182,12 @@ class _HomeViewState extends State<HomeView> {
                 child: Container(
                   decoration: const BoxDecoration(
                     border: Border(
-                      left: BorderSide(color: Colors.white),
+                      bottom: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
+                      left: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
                     ),
                   ),
                   height: 100,
@@ -185,7 +209,12 @@ class _HomeViewState extends State<HomeView> {
                 child: Container(
                   decoration: const BoxDecoration(
                     border: Border(
-                      left: BorderSide(color: Colors.white),
+                      bottom: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
+                      left: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
                     ),
                   ),
                   height: 100,
@@ -205,7 +234,12 @@ class _HomeViewState extends State<HomeView> {
                 child: Container(
                   decoration: const BoxDecoration(
                     border: Border(
-                      left: BorderSide(color: Colors.white),
+                      bottom: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
+                      left: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
                     ),
                   ),
                   height: 100,
@@ -230,7 +264,13 @@ class _HomeViewState extends State<HomeView> {
                   widget.controller.display('4');
                 },
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
+                    ),
+                  ),
                   height: 100,
                   width: 95,
                   child: const Center(
@@ -250,7 +290,12 @@ class _HomeViewState extends State<HomeView> {
                 child: Container(
                   decoration: const BoxDecoration(
                     border: Border(
-                      left: BorderSide(color: Colors.white),
+                      bottom: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
+                      left: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
                     ),
                   ),
                   height: 100,
@@ -272,7 +317,12 @@ class _HomeViewState extends State<HomeView> {
                 child: Container(
                   decoration: const BoxDecoration(
                     border: Border(
-                      left: BorderSide(color: Colors.white),
+                      bottom: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
+                      left: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
                     ),
                   ),
                   height: 100,
@@ -292,7 +342,12 @@ class _HomeViewState extends State<HomeView> {
                 child: Container(
                   decoration: const BoxDecoration(
                     border: Border(
-                      left: BorderSide(color: Colors.white),
+                      bottom: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
+                      left: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
                     ),
                   ),
                   height: 100,
@@ -317,7 +372,13 @@ class _HomeViewState extends State<HomeView> {
                   widget.controller.display('1');
                 },
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
+                    ),
+                  ),
                   height: 100,
                   width: 95,
                   child: const Center(
@@ -337,7 +398,12 @@ class _HomeViewState extends State<HomeView> {
                 child: Container(
                   decoration: const BoxDecoration(
                     border: Border(
-                      left: BorderSide(color: Colors.white),
+                      bottom: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
+                      left: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
                     ),
                   ),
                   height: 100,
@@ -359,7 +425,12 @@ class _HomeViewState extends State<HomeView> {
                 child: Container(
                   decoration: const BoxDecoration(
                     border: Border(
-                      left: BorderSide(color: Colors.white),
+                      bottom: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
+                      left: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
                     ),
                   ),
                   height: 100,
@@ -375,11 +446,18 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  widget.controller.toInt();
+                },
                 child: Container(
                   decoration: const BoxDecoration(
                     border: Border(
-                      left: BorderSide(color: Colors.white),
+                      bottom: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
+                      left: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
                     ),
                   ),
                   height: 100,
@@ -404,7 +482,13 @@ class _HomeViewState extends State<HomeView> {
                   widget.controller.display('0');
                 },
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      left: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
+                    ),
+                  ),
                   height: 100,
                   width: 95,
                   child: const Center(
@@ -418,13 +502,16 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ),
               GestureDetector(
-                onTap: () {
-                  
-                },
+                onTap: () {},
                 child: Container(
                   decoration: const BoxDecoration(
                     border: Border(
-                      left: BorderSide(color: Colors.white),
+                      right: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
+                      left: BorderSide(
+                        color: Color.fromARGB(123, 35, 31, 31),
+                      ),
                     ),
                   ),
                   height: 100,

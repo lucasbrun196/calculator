@@ -39,6 +39,7 @@ dependencies:
   flutter_bloc: ^8.0.1
   equatable: ^2.0.5
   path_provider: ^2.1.1
+  math_expressions: ^2.0.0
   
 
 

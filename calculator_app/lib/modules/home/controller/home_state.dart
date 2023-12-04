@@ -2,40 +2,33 @@ part of 'home_controller.dart';
 
 enum HomeStatus { initial, loading, failure, success }
 
-enum DisplayStatus { initial, display, notDisplay}
-
 
 
 class HomeState extends Equatable {
   final HomeStatus status;
-  final String? displayNumber;
-  final DisplayStatus? displayStatus;
+  final String numbersOperation;
+
 
 
   const HomeState._(
-      {required this.status, required this.displayNumber, required this.displayStatus});
+      {required this.status,
+      required this.numbersOperation});
 
   const HomeState.initial()
       : this._(
           status: HomeStatus.initial,
-          displayNumber: '',
-          displayStatus: DisplayStatus.initial,
-        );
+          numbersOperation: '');
 
   @override
-  List<Object?> get props => [status, displayNumber, displayStatus];
+  List<Object?> get props => [status, numbersOperation];
 
   HomeState copyWith({
     HomeStatus? status,
-    String? displayNumber,
-    DisplayStatus? displayStatus,
-    
+    String? numbersOperation
   }) {
     return HomeState._(
       status: status ?? this.status,
-      displayNumber: displayNumber ?? this.displayNumber,
-      displayStatus: displayStatus ?? this.displayStatus,
-    
+      numbersOperation: numbersOperation ?? this.numbersOperation,
     );
   }
 }

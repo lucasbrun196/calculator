@@ -14,6 +14,21 @@ class HomeController extends Cubit<HomeState> {
     );
   }
 
+  void showOperators(String operator) {
+    if (state.numbersOperation != '') {
+      String lastChar =
+          state.numbersOperation[state.numbersOperation.length - 1];
+      if (lastChar != '+' &&
+          lastChar != '-' &&
+          lastChar != '+' &&
+          lastChar != '/') {
+        String elements = state.numbersOperation;
+        elements += operator;
+        emit(state.copyWith(numbersOperation: elements));
+      }
+    }
+  }
+
   void clear() {
     emit(
       state.copyWith(numbersOperation: ''),
@@ -31,7 +46,12 @@ class HomeController extends Cubit<HomeState> {
   }
 
   void equal() {
-    try{  
+    String lastChar = state.numbersOperation[state.numbersOperation.length - 1];
+    if (state.numbersOperation != '' &&
+        lastChar != '+' &&
+        lastChar != '-' &&
+        lastChar != '+' &&
+        lastChar != '/') {
       Parser parser = Parser();
       Expression expression = parser.parse(state.numbersOperation);
       ContextModel cm = ContextModel();
@@ -41,8 +61,6 @@ class HomeController extends Cubit<HomeState> {
           numbersOperation: result.toString(),
         ),
       );
-    }catch (e){
-      print(e);
     }
   }
 }

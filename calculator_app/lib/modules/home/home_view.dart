@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 
 class HomeView extends StatefulWidget {
-  HomeController controller;
-  HomeView({super.key, required this.controller});
+  final HomeController controller;
+  const HomeView({super.key, required this.controller});
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -18,7 +18,7 @@ class _HomeViewState extends State<HomeView> {
       appBar: AppBar(
         elevation: 0,
         title: const Center(
-          child: Text('Calculator'),
+          child: Text('Calculadora'),
         ),
       ),
       body: BlocBuilder<HomeController, HomeState>(
@@ -35,7 +35,7 @@ class _HomeViewState extends State<HomeView> {
                   builder: (BuildContext context, HomeState state) {
                     return Column(
                       children: [
-                        Text(state.numbersOperation),
+                        Text(state.numbersOperation, style: const TextStyle(fontSize: 30)),
                       ],
                     );
                   },
@@ -124,7 +124,7 @@ class _HomeViewState extends State<HomeView> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        widget.controller.showElements('/');
+                        widget.controller.showOperators('/');
                       },
                       child: Container(
                         decoration: const BoxDecoration(
@@ -235,7 +235,7 @@ class _HomeViewState extends State<HomeView> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      widget.controller.showElements('*');
+                      widget.controller.showOperators('*');
                     },
                     child: Container(
                       decoration: const BoxDecoration(
@@ -345,7 +345,7 @@ class _HomeViewState extends State<HomeView> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      widget.controller.showElements('-');
+                      widget.controller.showOperators('-');
                     },
                     child: Container(
                       decoration: const BoxDecoration(
@@ -455,7 +455,7 @@ class _HomeViewState extends State<HomeView> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      widget.controller.showElements('+');
+                      widget.controller.showOperators('+');
                     },
                     child: Container(
                       decoration: const BoxDecoration(

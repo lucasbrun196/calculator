@@ -12,7 +12,7 @@ class AppModule extends Module{
 
   @override
   List<ModularRoute> get routes => [
-    ChildRoute('/', child: (context, args) => SplashPage()),
+    ChildRoute('/', child: (context, args) => const SplashPage()),
     ModuleRoute('/home', module: HomeModule())
   ];
 
